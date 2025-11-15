@@ -7,6 +7,6 @@
 	<p><h1>Jenkins Classes</h2></p>
 
 	<p><h2>Jenkins - CICD</h2></p>
-	<p><h2>GIT - SCM</h2></p>
+	<p><h2>GIT - CICD</h2></p>
 	<p><h2>BASH - Automation</h2></p>
 </body>
