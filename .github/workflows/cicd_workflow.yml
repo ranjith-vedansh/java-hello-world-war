@@ -3,9 +3,9 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main
-      - dev
-      - stagging
+      - master
+      - patch-1
+      - pre-production
 
 jobs:
   build:
@@ -40,11 +40,11 @@ jobs:
           echo "Deploying WAR to remote Web Server"
           
           # Determine the server based on the branch
-          if [ "${{ github.ref_name }}" == "main" ]; then
+          if [ "${{ github.ref_name }}" == "master" ]; then
             SERVER_IP="13.233.145.108"
-          elif [ "${{ github.ref_name }}" == "dev" ]; then
+          elif [ "${{ github.ref_name }}" == "patch-1" ]; then
             SERVER_IP="13.233.145.200"
-          elif [ "${{ github.ref_name }}" == "stagging" ]; then
+          elif [ "${{ github.ref_name }}" == "pre-production" ]; then
             SERVER_IP="13.233.145.300"
           else
             echo "Branch not configured for deployment: ${{ github.ref_name }}"
