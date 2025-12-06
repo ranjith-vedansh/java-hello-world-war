@@ -1,0 +1,26 @@
+name: Build and Deploy Java Application
+
+on:
+  push:
+    branches:
+      - master
+      - patch-1
+      - pre-production
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        repository: 'https://github.com/ranjith-vedansh/java-hello-world-war.git'
+        ref: 'master'
+    
+    - name: Install pre-requisite
+      run: | 
+        echo "Verify Java, Maven installation"
+        java --version
+        maven --version
+        
