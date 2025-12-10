@@ -25,22 +25,22 @@ jobs:
         echo "Verify Java installation"
         if ! command -v java &> /dev/null
         then
-            echo "Java not found. Installing OpenJDK..."
+            echo "Java not found. Installing OpenJDK..." >> $GITHUB_STEP_SUMMARY
             sudo apt-get update
             sudo apt-get install -y openjdk-11-jdk
         else
-            echo "Java is already installed:"
-            java --version
+            echo "Java is already installed:"  >> $GITHUB_STEP_SUMMARY
+            java --version 
         fi
 
-        echo "Verify Maven installation"
+        echo "Verify Maven installation" >> $GITHUB_STEP_SUMMARY
         if ! command -v mvn &> /dev/null
         then
             echo "Maven not found. Installing Maven..."
             sudo apt-get update
             sudo apt-get install -y maven
         else
-            echo "Maven is already installed:"
+            echo "Maven is already installed:" >> $GITHUB_STEP_SUMMARY
             mvn --version
         fi
     - name: Build the application
@@ -50,3 +50,7 @@ jobs:
       run: |
         echo "Checking for *.war file under targerst directory"  
         ls -Rlrt
+        pwd
+        ls -lrt
+        echo "----------------------------"
+        whoami
