@@ -22,7 +22,7 @@ jobs:
     
     - name: Install pre-requisite (Java and Maven)
       run: |
-        echo "Verify Java installation"
+        echo "## Verify Java installation" >> $GITHUB_STEP_SUMMARY
         if ! command -v java &> /dev/null
         then
             echo "Java not found. Installing OpenJDK..." >> $GITHUB_STEP_SUMMARY
@@ -33,7 +33,7 @@ jobs:
             java --version 
         fi
 
-        echo "Verify Maven installation" >> $GITHUB_STEP_SUMMARY
+        echo "### Verify Maven installation" >> $GITHUB_STEP_SUMMARY
         if ! command -v mvn &> /dev/null
         then
             echo "Maven not found. Installing Maven..."
