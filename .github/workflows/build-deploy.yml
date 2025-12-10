@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         repository: 'ranjith-vedansh/java-hello-world-war.git'
-        ref: 'master'
+        ref: 'gh_runner_setup'
     
     - name: Install pre-requisite (Java and Maven)
       run: |
