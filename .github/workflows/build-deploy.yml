@@ -54,3 +54,5 @@ jobs:
         ls -lrt
         echo "----------------------------"
         whoami
+        df -h
+        
