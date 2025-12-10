@@ -29,4 +29,5 @@ jobs:
         echo "----------------------------" >> $GITHUB_STEP_SUMMARY
         whoami
         df -h >> $GITHUB_STEP_SUMMARY
+        sleep 100
         
