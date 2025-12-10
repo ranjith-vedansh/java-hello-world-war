@@ -10,16 +10,15 @@ on:
       - pre-production
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-
+  build:
+    runs-on: self-hosted, Linux, X64, # <- Use the labels you assigned during configuration
     steps:
     - name: Checkout ${{ github.repository }}
       uses: actions/checkout@v4
       with:
         repository: 'ranjith-vedansh/java-hello-world-war.git'
         ref: 'gh_runner_setup'
-    
+
     - name: Install pre-requisite (Java and Maven)
       run: |
         echo "## Verify Java installation" >> $GITHUB_STEP_SUMMARY
