@@ -23,36 +23,10 @@ jobs:
     - name: Install pre-requisite (Java and Maven)
       run: |
         echo "## Verify Java installation" >> $GITHUB_STEP_SUMMARY
-        if ! command -v java &> /dev/null
-        then
-            echo "Java not found. Installing OpenJDK..." >> $GITHUB_STEP_SUMMARY
-            sudo apt-get update
-            sudo apt-get install -y openjdk-11-jdk
-        else
-            echo "Java is already installed:"  >> $GITHUB_STEP_SUMMARY
-            java --version 
-        fi
-
-        echo "### Verify Maven installation" >> $GITHUB_STEP_SUMMARY
-        if ! command -v mvn &> /dev/null
-        then
-            echo "Maven not found. Installing Maven..."
-            sudo apt-get update
-            sudo apt-get install -y maven
-        else
-            echo "Maven is already installed:" >> $GITHUB_STEP_SUMMARY
-            mvn --version
-        fi
-    - name: Build the application
-      run: mvn clean package
-
-    - name: Deploy to Server
-      run: |
-        echo "Checking for *.war file under targerst directory"  
-        ls -Rlrt
         pwd
-        ls -lrt
-        echo "----------------------------"
+        echo "PWD = $pwd"  >> $GITHUB_STEP_SUMMARY
+        ls -lrt >> $GITHUB_STEP_SUMMARY
+        echo "----------------------------" >> $GITHUB_STEP_SUMMARY
         whoami
         df -h >> $GITHUB_STEP_SUMMARY
         
