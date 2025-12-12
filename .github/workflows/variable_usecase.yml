@@ -9,6 +9,8 @@ on:
 env:
   name: Ranjith
   course: Devops
+  JOB2_USERNAME: ${{ vars.MY_USERNAME }}
+  job2_password: ${{ secr.MY_PASSWORD }}
 jobs:
    job1_printing_variable_name:
      runs-on: ubuntu-latest
@@ -34,11 +36,11 @@ jobs:
      runs-on: ubuntu-latest
      env:
        flavor: ubuntu
-       os: Windows
+
      steps:
        - name: step1_Usecase_for_variables_value
          run: |
            echo "My name is $name" >> $GITHUB_STEP_SUMMARY
            echo "$course is the topic" >> $GITHUB_STEP_SUMMARY
-           echo "We learn $os with $flavor for our commands practice" >> $GITHUB_STEP_SUMMARY
+           echo "We learn Linux with $flavor for our commands practice" >> $GITHUB_STEP_SUMMARY
 
