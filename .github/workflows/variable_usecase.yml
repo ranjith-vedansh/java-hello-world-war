@@ -12,6 +12,8 @@ env:
 jobs:
    printing_variable_name:
      runs-on: ubuntu-latest
+     env:
+       os: Linux
      steps:
        - name: Usecase_for_variables_name # Added a space before 'name'
          run: |
@@ -19,13 +21,17 @@ jobs:
           echo "$name is leading the class for Devops" >> $GITHUB_STEP_SUMMARY
        - name: Usecase_for_variables_name # Added a space before 'name'
          run: |
-          echo "This an 2nd step statement from job1" >> $GITHUB_STEP_SUMMARY
+          echo "We learn $os as a Operating System" >> $GITHUB_STEP_SUMMARY
     
    printing_variable_value:
      runs-on: ubuntu-latest
+     env:
+       flavor: ubuntu
+       os: Windows
      steps:
        - name: Usecase_for_variables_value
          run: |
            echo "My name is $name" >> $GITHUB_STEP_SUMMARY
            echo "$course is the topic" >> $GITHUB_STEP_SUMMARY
+           echo "We learn $os with $flavor for our commands practice" >> $GITHUB_STEP_SUMMARY
 
