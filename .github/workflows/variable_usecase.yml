@@ -14,5 +14,5 @@ jobs:
      steps:
        - name: Usecase_for_variables # Added a space before 'name'
          run: |
-          echo "My name is $name"
+          echo "My name is $name" >> $GITHUB_STEP_SUMMARY
 
