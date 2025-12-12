@@ -7,13 +7,25 @@ on:
       - master
       - variables_example-_branch
 env:
-  name: Rajesh
+  name: Ranjith
+  course: Devops
 jobs:
-   testing_variable_job:
+   printing_variable_name:
      runs-on: ubuntu-latest
      steps:
-       - name: Usecase_for_variables # Added a space before 'name'
+       - name: Usecase_for_variables_name # Added a space before 'name'
          run: |
           echo "My name is $name" >> $GITHUB_STEP_SUMMARY
           echo "$name is leading the class for Devops" >> $GITHUB_STEP_SUMMARY
+       - name: Usecase_for_variables_name # Added a space before 'name'
+         run: |
+          echo "This an 2nd step statement from job1" >> $GITHUB_STEP_SUMMARY
+    
+   printing_variable_value:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Usecase_for_variables_value
+         run: |
+           echo "My name is $name" >> $GITHUB_STEP_SUMMARY
+           echo "$course is the topic" >> $GITHUB_STEP_SUMMARY
 
