@@ -10,26 +10,32 @@ env:
   name: Ranjith
   course: Devops
 jobs:
-   printing_variable_name:
+   job1_printing_variable_name:
      runs-on: ubuntu-latest
      env:
        os: Linux
      steps:
-       - name: Usecase_for_variables_name # Added a space before 'name'
+       - name: step1_Usecase_for_variables_name # Added a space before 'name'
+         env:
+           topic: Devops
          run: |
           echo "My name is $name" >> $GITHUB_STEP_SUMMARY
-          echo "$name is leading the class for Devops" >> $GITHUB_STEP_SUMMARY
-       - name: Usecase_for_variables_name # Added a space before 'name'
+          echo "$name is leading the class for $topic" >> $GITHUB_STEP_SUMMARY
+          
+       - name: step2_Usecase_for_variables_name # Added a space before 'name'
+         env:
+           topic: SRE
          run: |
           echo "We learn $os as a Operating System" >> $GITHUB_STEP_SUMMARY
+          echo "$name is leading the class for $topic" >> $GITHUB_STEP_SUMMARY
     
-   printing_variable_value:
+   job2_printing_variable_value:
      runs-on: ubuntu-latest
      env:
        flavor: ubuntu
        os: Windows
      steps:
-       - name: Usecase_for_variables_value
+       - name: step1_Usecase_for_variables_value
          run: |
            echo "My name is $name" >> $GITHUB_STEP_SUMMARY
            echo "$course is the topic" >> $GITHUB_STEP_SUMMARY
