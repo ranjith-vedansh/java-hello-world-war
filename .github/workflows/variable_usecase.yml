@@ -1,18 +1,14 @@
 name: Variable Usecase Workflow
 
 on:
-  workflow_dispatch:
-  
+  workflow_dispatch:  
   push:
     - master
     - variables_example-_branch
-
-  
- jobs:
+jobs:
    testing_variable_job:
      runs-on: ubuntu-latest
-
      steps:
        -name: Usecase_for_variables
-         run: echo "My name is Ranjith"
-    
+        run |
+          echo "My name is Ranjith"
