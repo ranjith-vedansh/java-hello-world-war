@@ -23,7 +23,9 @@ jobs:
          run: |
           echo "My name is $name" >> $GITHUB_STEP_SUMMARY
           echo "My UserName is $JOB_username" >> $GITHUB_STEP_SUMMARY
-          echo "My UserName is $job_password" >> $GITHUB_STEP_SUMMARY
+          echo "My UserPassword is $job_password" >> $GITHUB_STEP_SUMMARY
+          echo "$job_password"
+          
           
        - name: step2_Usecase_for_variables_name # Added a space before 'name'
          env:
