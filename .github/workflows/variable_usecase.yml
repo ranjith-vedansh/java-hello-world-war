@@ -6,12 +6,13 @@ on:
     branches: # This key is required to list branches
       - master
       - variables_example-_branch
-
+env:
+  name: Ranjith
 jobs:
    testing_variable_job:
      runs-on: ubuntu-latest
      steps:
        - name: Usecase_for_variables # Added a space before 'name'
          run: |
-          echo "My name is Ranjith"
+          echo "My name is $name"
 
