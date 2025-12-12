@@ -22,6 +22,7 @@ jobs:
     
     - name: Install pre-requisite (Java and Maven)
       run: |
+        echo "We learn ${{ vars.CICD_TOOL }} for SDLC automation." >> $GITHUB_STEP_SUMMARY
         echo "Verify Java installation"
         if ! command -v java &> /dev/null
         then
