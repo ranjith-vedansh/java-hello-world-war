@@ -21,7 +21,7 @@ jobs:
          run: |
           echo "My name is $name" >> $GITHUB_STEP_SUMMARY
           echo "$name is leading the class for $topic" >> $GITHUB_STEP_SUMMARY
-          echo "$We use ${{ var.CICD_TOOL }} for SDLC automation." >> $GITHUB_STEP_SUMMARY
+          echo "We learn ${{ var.CICD_TOOL }} for SDLC automation." >> $GITHUB_STEP_SUMMARY
           
        - name: step2_Usecase_for_variables_name # Added a space before 'name'
          env:
